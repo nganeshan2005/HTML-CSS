@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/solid.css" integrity="sha384-+0VIRx+yz1WBcCTXBkVQYIBVNEFH1eP6Zknm16roZCyeNg2maWEpk/l/KsyFKs7G" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/regular.css" integrity="sha384-aubIA90W7NxJ+Ly4QHAqo1JBSwQ0jejV75iHhj59KRwVjLVHjuhS3LkDAoa/ltO4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/fontawesome.css" integrity="sha384-jLuaxTTBR42U2qJ/pm4JRouHkEDHkVqH0T1nyQXn1mZ7Snycpf6Rl25VBNthU4z0" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+    <link rel="stylesheet" href="table-style.css">
+    <title>Advanced Table</title>
+</head>
+<body>
+    <div class="page-wrapper">
+        <div class="container">
+            <div class="table-toolbar">
+                <div class="table-toolbar-left">
+                    <span><i class="far fa-check-square"></i>Select All</span>
+                    <!-- <span><i class="far fa-trash-alt"></i>Delete</span> -->
+                    <span><i class="fas fa-filter"></i>Filter</span>
+                    <span><i class="fas fa-sort"></i>Sort</span>
+                    <span><i class="fas fa-highlighter"></i>Highlight</span>
+                </div>
+                <div class="table-toolbar-right">
+                    <span><i class="fas fa-plus"></i>Add Data</span>
+                    <span><i class="fas fa-cog"></i>Table Setting</span>
+                </div>
+            </div>
+            <table class="fixed-header" id="my-table">
+                <thead>
+                    <tr>
+                        <th style="width:5%">
+                            <div>Sr No<span class="holder"></span></div>
+                        </th>
+                        <th style="width:100px">
+                            <div>City <span class="holder"></span></div>
+                        </th>
+                        <th>
+                            <div>Population<span class="holder"></span></div>
+                        </th>
+                        <th>
+                            <div>Male Count<span class="holder"></span></div>
+                        </th>
+                        <th>
+                            <div>Female Count<span class="holder"></span></div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Mumbai</td>
+                        <td>10,245,8870</td>
+                        <td>5,45,76688</td>
+                        <td>4,78,90076</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Pune</td>
+                        <td>10,245,8870</td>
+                        <td>5,45,76688</td>
+                        <td>4,78,90076</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Chennai</td>
+                        <td>10,245,8870</td>
+                        <td>5,45,76688</td>
+                        <td>4,78,90076</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Bangalore</td>
+                        <td>10,245,8870</td>
+                        <td>5,45,76688</td>
+                        <td>4,78,90076</td>
+                    </tr>
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+            <!-- <div class="holder"></div> -->
+        </div>
+    </div>
+
+
+
+
+
+
+    <script src="table.js" role=""></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin:0px;
+    padding:0px;
+    box-sizing:border-box;
+}
+
+.page-wrapper   {
+    background-color: #dfdfdf;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    width:88%;
+    height:50%;
+    /* border: 1px solid #a3a3a3; */
+    
+}
+
+.table-toolbar{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    /* background-color: #e7e7e7; */
+    width:100%;
+    height:auto;
+    margin: 0 0 2px 0;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 500;
+    color:#464749
+}
+
+[class^="table-toolbar-"]{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.table-toolbar span{
+    background-color: #f1f1f1;
+    border:1px solid #dbdbdb;
+    padding: 4px 6px;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+
+.table-toolbar i{
+    margin-right: 4px;
+}
+
+
+table {
+    width:100%;
+    background-color: white;
+    border-collapse: collapse;
+    vertical-align: middle;
+    font-size: 16px;
+    overflow: hidden;
+    border-radius: .3em;
+}
+
+table th, table td{
+    text-align: left;
+    padding: .5em .7em;
+    border:1px solid #e9e9e9;
+}
+
+table th{
+    font-weight: 500;
+    font-size: .8em;
+    color:#444;
+    background-color: #e9e9e9;
+}
+
+table thead tr th{
+    position: relative;
+}
+
+table tr th:not(:last-child) div:after{
+    content:"";
+    position: absolute;
+    border-right: 1px solid #cfcfcf;
+    right:0px;
+    top:20%;
+    bottom:20%;
+    /* box-shadow: 1px 1px rgba(0,0,0,.2); */
+}
+
+table tr th:not(:last-child):hover .holder{
+    display:block;
+}
+
+.holder{
+    display:none;
+    background-color: rgb(194, 194, 194);
+    width:6px;
+    /* height: 20px; */
+    position: absolute;
+    right:-1px;
+    top:20%;
+    bottom:20%;
+    cursor:col-resize;
+    z-index: 2;
+}
+
+table td{
+    font-weight: 400;
+    font-size: .74em;
+    color:#777;
+    
+}
