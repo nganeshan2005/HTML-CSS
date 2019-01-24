@@ -4,10 +4,10 @@ let fixedHeader = document.getElementsByClassName('fixed-header');
 let thArray = Array.from(th);
 
 let thHolder = document.querySelectorAll(".holder");
-let targetTh, sliced, mouseMove;
+let holder, targetTh, sliced, mouseMove;
 for(var i = 0; i < thHolder.length; i++){
-    
-    thHolder[i].addEventListener('mousedown', function(e){
+    holder = thHolder[i];
+    holder.addEventListener('mousedown', function(e){
         targetTh = e.target.parentElement.parentElement
         let computedWidth = window.getComputedStyle(targetTh).width;
         //since table th width is auto not able to capture its value so assigning computed width
@@ -17,17 +17,22 @@ for(var i = 0; i < thHolder.length; i++){
         document.addEventListener('mousemove', function(e){
             mouseTravel = (-mouseStart + e.clientX);
             targetTh.style.width = (sliced + mouseTravel) + "px";
-            console.log(mouseTravel);
-            
-            return mouseTravel;
-        })
+
+            document.addEventListener('mouseup', function(){
+                console.log("mouseup")
+                document.removeEventListener('mousemove', function(){
+                    console.log("working");
+                })
+            })
+
+        return mouseTravel;
+        });
+        return holder;
     })
-    document.addEventListener('mouseup', function(e){
-        e.target.removeEventListener('mousemove', function(e){
-            targetTh.style.width = (sliced + mouseTravel) + "px";
-        })
-    })
+
 }
+
+
 
 /* let mouseMove;
 function calculateMouseMove(){
