@@ -1,76 +1,69 @@
 let myTable = document.getElementById("my-table");
 let th = myTable.getElementsByTagName("th");
-let fixedHeader = document.getElementsByClassName('fixed-header');
 let thArray = Array.from(th);
-
+console.log(th);
 let thHolder = document.querySelectorAll(".holder");
-let holder, targetTh, sliced, mouseMove;
+
+
+
+// Column Resizer
 for(var i = 0; i < thHolder.length; i++){
-    holder = thHolder[i];
-    holder.addEventListener('mousedown', function(e){
-        targetTh = e.target.parentElement.parentElement
+
+    thHolder[i].addEventListener('mousedown', function(e){
+        let targetTh = e.target.parentElement.parentElement
         let computedWidth = window.getComputedStyle(targetTh).width;
-        //since table th width is auto not able to capture its value so assigning computed width
-        let str = computedWidth
-            sliced = parseInt(str.slice(0, -2), 0);
+        let sliced = parseInt(computedWidth.slice(0, -2), 0);
         let mouseStart = e.clientX;
-        document.addEventListener('mousemove', function(e){
-            mouseTravel = (-mouseStart + e.clientX);
-            targetTh.style.width = (sliced + mouseTravel) + "px";
 
+        function resize(e){
+            let mouseTravel = -mouseStart + e.clientX;
+            targetTh.style.width = (sliced + mouseTravel) + 'px';
+           
             document.addEventListener('mouseup', function(){
-                console.log("mouseup")
-                document.removeEventListener('mousemove', function(){
-                    console.log("working");
-                })
+                document.removeEventListener('mousemove', resize);
             })
-
-        return mouseTravel;
-        });
-        return holder;
+        }
+        document.addEventListener('mousemove', resize);
     })
-
 }
 
-
-
-/* let mouseMove;
-function calculateMouseMove(){
-    let mouseInitialPosition = 0;
-    myTable.addEventListener('mousedown', function(e){
-        mouseInitialPosition = e.clientX;
-        console.log(mouseInitialPosition)
-    });
-
-    let mouseNewPosition = 0;
-    myTable.addEventListener('mouseup', function(e){
-        mouseNewPosition = e.clientX;
-        console.log(mouseNewPosition);
-        mouseMove = mouseNewPosition - mouseInitialPosition;
-        console.log(mouseMove);
-    })
-    console.log(mouseMove);
-    return mouseMove;
-};
-calculateMouseMove();
-
-
-for(var i = 0; i < thHolder.length; i++){
-    thHolder[i].addEventListener('drag', function(e){
-        let targetTH = e.target.parentElement.parentElement;
-        let thWidth = window.getComputedStyle(targetTH).width;
-        let getCurrentWidth = parseInt(targetTH.style.width);
-
+//on Click Column Selector
+if( myTable.classList.contains("column-highlight") ){
+    let target, thChild, tdChild;
+    //get clicked target
+    document.addEventListener('click', function(e){
+        target = e.target;
         
-        console.log(getCurrentWidth);
-        targetTH.style.width = getCurrentWidth + (mouseMove) + 'px';
-        console.log(mouseMove);
+        let findParent = target.parentElement.children;
+        let arrayOfParent = Array.from(findParent);
+        let targetsIndex = arrayOfParent.indexOf(target) + 1 ;
 
+        thChild = myTable.querySelectorAll("tr th:nth-child(" + targetsIndex + ")");
+        tdChild = myTable.querySelectorAll("tr td:nth-child(" + targetsIndex + ")");
+        restTds = myTable.querySelectorAll("tr td:not(:nth-child(" + targetsIndex + ")");
+        restThs = myTable.querySelectorAll("tr th:not(:nth-child(" + targetsIndex + ")");
+        
+        function colorMe(x){   
+            /* x.style.backgroundColor = 'rgba(255, 207, 22, .33)';
+            x.style.color = "#333" */
+            x.classList.add('click-highlight');
         }
-            
-    )}
- */
+        tdChild.forEach(colorMe);
+        thChild.forEach(colorMe);
 
-
-
-console.log();
+        function removeColor(y){
+            /* y.style.backgroundColor = '';
+            y.style.color = "" */
+            y.classList.remove('click-highlight');
+        }
+        restTds.forEach(removeColor);
+        restThs.forEach(removeColor);
+    }) 
+    document.addEventListener('click', function(e){
+        e.stopPropagation();
+        e.preventDefault();
+            console.log(e.target)
+        
+    }, false)
+    
+}
