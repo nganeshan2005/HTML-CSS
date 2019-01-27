@@ -1,7 +1,6 @@
 let myTable = document.getElementById("my-table");
 let th = myTable.getElementsByTagName("th");
 let thArray = Array.from(th);
-console.log(th);
 let thHolder = document.querySelectorAll(".holder");
 
 
@@ -10,11 +9,11 @@ let thHolder = document.querySelectorAll(".holder");
 for(var i = 0; i < thHolder.length; i++){
 
     thHolder[i].addEventListener('mousedown', function(e){
-        let targetTh = e.target.parentElement.parentElement
+        let targetTh = e.target.parentElement
         let computedWidth = window.getComputedStyle(targetTh).width;
         let sliced = parseInt(computedWidth.slice(0, -2), 0);
         let mouseStart = e.clientX;
-
+        console.log(e.target);
         function resize(e){
             let mouseTravel = -mouseStart + e.clientX;
             targetTh.style.width = (sliced + mouseTravel) + 'px';
@@ -59,11 +58,33 @@ if( myTable.classList.contains("column-highlight") ){
         restTds.forEach(removeColor);
         restThs.forEach(removeColor);
     }) 
-    document.addEventListener('click', function(e){
-        e.stopPropagation();
-        e.preventDefault();
-            console.log(e.target)
-        
-    }, false)
+
+    // Need improvement on Outside click no selection.
+    // Th click also should select entire column
     
 }
+
+
+
+//Fihed Header and Selected Rows and columns
+
+    if (myTable.classList.contains("freeze-header")){
+        let container = document.getElementById("table-container");
+        function xy (){
+            scrollAmt = container.scrollTop;
+            let frozenElem = myTable.getElementsByClassName("frozen");
+            for(var i=0; i<frozenElem.length; i++){
+                frozenElem[i].style.top = scrollAmt + "px"; 
+            }
+        }
+        container.addEventListener("scroll", xy)
+    
+    } else{
+        console.log("\"Freeze-Header\" Class not available to table")
+    }
+
+
+
+//give average calculated width th column
+//Tooltips
+//Row collapse

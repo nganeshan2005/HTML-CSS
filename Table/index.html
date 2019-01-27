@@ -14,91 +14,163 @@
 </head>
 <body>
     <div class="page-wrapper">
-        <div class="container">
-            <!-- <div class="table-toolbar">
-                <div class="table-toolbar-left">
-                    <span><i class="far fa-check-square"></i>Select All</span>
-                    <span><i class="far fa-trash-alt"></i>Delete</span>
-                    <span><i class="fas fa-filter"></i>Filter</span>
-                    <span><i class="fas fa-sort"></i>Sort</span>
-                    <span><i class="fas fa-highlighter"></i>Highlight</span>
-                </div>
-                <div class="table-toolbar-right">
-                    <span><i class="fas fa-plus"></i>Add Data</span>
-                    <span><i class="fas fa-cog"></i>Table Setting</span>
-                </div>
-            </div> -->
-            <table class="fixed-header column-highlight" id="my-table">
-                <thead>
-                    <tr>
-                        <th style="width:5%">
-                            <div>Sr No<span class="holder"></span></div>
-                        </th>
-                        <th>
-                            <div>State <span class="holder"></span></div>
-                        </th>
-                        <th>
-                            <div>Capital City <span class="holder"></span></div>
-                        </th>
-                        <th>
-                            <div>Population<span class="holder"></span></div>
-                        </th>
-                        <th>
-                            <div>Male Count<span class="holder"></span></div>
-                        </th>
-                        <th>
-                            <div>Female Count<span class="holder"></span></div>
-                        </th>
-                        <th>
-                            <div>Literacy<span class="holder"></span></div>
-                        </th>
-                        <th>
-                            <div>Literacy<span class="holder"></span></div>
-                        </th>
-                        <th>
-                            <div>Literacy<span class="holder"></span></div>
-                        </th>
-                        <th>
-                            <div>Literacy<span class="holder"></span></div>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Maharashtra</td>
-                        <td>Mumbai</td>
-                        <td>10,245,8870</td>
-                        <td>5,45,76688</td>
-                        <td>4,78,90076</td>
-                        <td>74.76%</td>
-                        <td>74.76%</td>
-                        <td>74.76%</td>
-                        <td>74.76%</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Haryana</td>
-                        <td>Chandigadh</td>
-                        <td>This is some Longest Line</td>
-                        <td>5,45,76688</td>
-                        <td>4,78,90076</td>
-                        <td>74.76%</td>
-                        <td>74.76%</td>
-                        <td>74.76%</td>
-                        <td>74.76%</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Tamilnadu</td>
-                        <td>Chennai</td>
-                        <td>10,245,8870</td>
-                        <td>5,45,76688</td>
-                        <td>4,78,90076</td>
-                        <td>74.76%</td>
-                        <td>74.76%</td>
-                        <td>74.76%</td>
-                        <td>74.76%</td>
+        <div class="freeze-container">
+            <div id="table-container">
+                <!-- <div class="table-toolbar">
+                    <div class="table-toolbar-left">
+                        <span><i class="far fa-check-square"></i>Select All</span>
+                        <span><i class="far fa-trash-alt"></i>Delete</span>
+                        <span><i class="fas fa-filter"></i>Filter</span>
+                        <span><i class="fas fa-sort"></i>Sort</span>
+                        <span><i class="fas fa-highlighter"></i>Highlight</span>
+                    </div>
+                    <div class="table-toolbar-right">
+                        <span><i class="fas fa-plus"></i>Add Data</span>
+                        <span><i class="fas fa-cog"></i>Table Setting</span>
+                    </div>
+                </div> -->
+                <table class="column-resizer column-highlight freeze-header" id="my-table">
+                    <thead>
+                        <tr>
+                            <th style="min-width:5% !important"> Sr No
+                                <div class="frozen">Sr No</div>
+                                <span class="holder"></span>
+                            </th>
+                            <th>State
+                                <div class="frozen">State </div>
+                                <span class="holder"></span>
+                            </th>
+                            <th>Capital City
+                                <div class="frozen xy">Capital City </div>
+                                <span class="holder"></span>
+                            </th>
+                            <th>Population
+                                <div class="frozen">Population</div>
+                                <span class="holder"></span>
+                            </th>
+                            <th>Male Count
+                                <div class="frozen">Male Counter</div>
+                                <span class="holder"></span>
+                            </th>
+                            <th>Female Count
+                                <div class="frozen">Female Count</div>
+                                <span class="holder"></span>
+                            </th>
+                            <th>Literacy
+                                <div class="frozen">Literacy</div>
+                                <span class="holder"></span>
+                            </th>
+                            <th>Literacy
+                                <div class="frozen">Literacy</div>
+                                <span class="holder"></span>
+                            </th>
+                            <th>Literacy
+                                <div class="frozen">Literacy</div>
+                                <span class="holder"></span>
+                            </th>
+                            <th>Literacy
+                                <div class="frozen">Literacy</div>
+                                <span class="holder"></span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Maharashtra</td>
+                            <td>Mumbai</td>
+                            <td>10,245,8870</td>
+                            <td>5,45,76688</td>
+                            <td>4,78,90076</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Haryana</td>
+                            <td>ChandigadhSagar</td>
+                            <td>This is some Longest Line</td>
+                            <td>5,45,76688</td>
+                            <td>4,78,90076</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Tamilnadu</td>
+                            <td>Chennai</td>
+                            <td>10,245,8870</td>
+                            <td>5,45,76688</td>
+                            <td>4,78,90076</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>UP</td>
+                            <td>Lakhnow</td>
+                            <td>10,245,8870</td>
+                            <td>5,45,76688</td>
+                            <td>4,78,90076</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Tamilnadu</td>
+                            <td>Chennai</td>
+                            <td>10,245,8870</td>
+                            <td>5,45,76688</td>
+                            <td>4,78,90076</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>UP</td>
+                            <td>Lakhnow</td>
+                            <td>10,245,8870</td>
+                            <td>5,45,76688</td>
+                            <td>4,78,90076</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>Tamilnadu</td>
+                            <td>Chennai</td>
+                            <td>10,245,8870</td>
+                            <td>5,45,76688</td>
+                            <td>4,78,90076</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>UP</td>
+                            <td>Lakhnow</td>
+                            <td>10,245,8870</td>
+                            <td>5,45,76688</td>
+                            <td>4,78,90076</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                            <td>74.76%</td>
+                        </tr>
                     </tr>
                     <tr>
                         <td>4</td>
@@ -112,10 +184,59 @@
                         <td>74.76%</td>
                         <td>74.76%</td>
                     </tr>
-                </tbody>
-                <tfoot></tfoot>
-            </table>
-            <!-- <div class="holder"></div> -->
+                    <tr>
+                        <td>5</td>
+                        <td>Tamilnadu</td>
+                        <td>Chennai</td>
+                        <td>10,245,8870</td>
+                        <td>5,45,76688</td>
+                        <td>4,78,90076</td>
+                        <td>74.76%</td>
+                        <td>74.76%</td>
+                        <td>74.76%</td>
+                        <td>74.76%</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>UP</td>
+                        <td>Lakhnow</td>
+                        <td>10,245,8870</td>
+                        <td>5,45,76688</td>
+                        <td>4,78,90076</td>
+                        <td>74.76%</td>
+                        <td>74.76%</td>
+                        <td>74.76%</td>
+                        <td>74.76%</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Tamilnadu</td>
+                        <td>Chennai</td>
+                        <td>10,245,8870</td>
+                        <td>5,45,76688</td>
+                        <td>4,78,90076</td>
+                        <td>74.76%</td>
+                        <td>74.76%</td>
+                        <td>74.76%</td>
+                        <td>74.76%</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>UP</td>
+                        <td>Lakhnow</td>
+                        <td>10,245,8870</td>
+                        <td>5,45,76688</td>
+                        <td>4,78,90076</td>
+                        <td>74.76%</td>
+                        <td>74.76%</td>
+                        <td>74.76%</td>
+                        <td>74.76%</td>
+                    </tr>
+                    </tbody>
+                    <tfoot></tfoot>
+                </table>
+                <!-- <div class="holder"></div> -->
+            </div>
         </div>
     </div>
 
